@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoLF: Project Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #209cee;
+            --text-color: #4a4a4a;
+            --bg-color: #ffffff;
+            --link-color: #3273dc;
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Google Sans', sans-serif;
+            color: #363636;
+            text-align: center;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; line-height: 1.2; }
+        h2 { font-size: 1.75rem; margin-top: 2rem; margin-bottom: 1rem; }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .hero {
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .project-title { font-weight: 700; }
+        .project-subtitle { font-size: 1.5rem; font-weight: 400; color: #666; margin-top: 0; }
+
+        /* Authors */
+        .authors { font-size: 1.2rem; margin-top: 1.5rem; }
+        .author-block { display: inline-block; margin-right: 15px; }
+        .author-block a { color: var(--link-color); text-decoration: none; }
+        .author-block a:hover { text-decoration: underline; }
+        .affiliations { font-size: 1rem; color: #666; margin-top: 10px; }
+
+        /* Buttons */
+        .button-container { margin-top: 25px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn { background-color: #363636; color: white; border-radius: 30px; padding: 10px 25px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 8px; transition: background-color 0.3s; }
+        .btn:hover { background-color: #555; }
+        .btn.light { background-color: #f5f5f5; color: #363636; border: 1px solid #dbdbdb; }
+        .btn.light:hover { background-color: #e8e8e8; }
+
+        /* Abstract */
+        .abstract-section { background-color: #f5f5f5; padding: 2rem; border-radius: 10px; margin-top: 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .abstract-text { text-align: justify; max-width: 800px; margin: 0 auto; }
+
+        /* Figures */
+        .figure { width: 100%; margin: 2rem 0; text-align: center; }
+        .figure img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .caption { font-size: 0.9rem; color: #666; margin-top: 8px; font-weight: 600; }
+
+        /* Code & Citation */
+        .citation { background-color: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace; font-size: 0.9rem; white-space: pre-wrap; text-align: left; }
+        footer { margin-top: 4rem; padding: 2rem; text-align: center; color: #999; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="hero">
+            <h1 class="project-title">MoLF: Mixture-of-Latent-Flow</h1>
+            <h2 class="project-subtitle">Pan-Cancer Spatial Gene Expression Prediction from Histology</h2>
+
+            <div class="authors">
+                <span class="author-block"><a href="#">Susu Hu</a><sup>1,2,3</sup></span>
+                <span class="author-block"><a href="#">Stefanie Speidel</a><sup>1,2,3</sup></span>
+            </div>
+
+            <div class="affiliations">
+                <span><sup>1</sup>National Center for Tumor Disease Dresden (NCT), Germany</span> &nbsp;&nbsp;
+                <span><sup>2</sup>German Cancer Research Center (DKFZ)</span> &nbsp;&nbsp;
+                <span><sup>3</sup>Dresden University of Technology, Germany</span>
+            </div>
+
+            <div class="button-container">
+                <a href="#" class="btn"><i class="fas fa-file-pdf"></i> Paper</a>
+                <a href="#" class="btn"><i class="fab fa-arxiv"></i> arXiv</a>
+                <a href="#" class="btn light"><i class="fab fa-github"></i> Code</a>
+            </div>
+        </header>
+
+        <section class="abstract-section" style="padding: 1.5rem; margin-top: 1.5rem;">
+            <h2 style="margin-top: 0; margin-bottom: 0.8rem; font-size: 1.5rem;">TL;DR</h2>
+            <div class="abstract-text" style="margin: 0;">
+                <p style="margin: 0;">
+                    We introduce <strong>MoLF</strong> (Mixture-of-Latent-Flow), a generative model for scalable <strong>pan-cancer histogenomics</strong>. By leveraging a <strong>Mixture-of-Experts (MoE)</strong> velocity field within a <strong>conditional Flow Matching</strong> framework, MoLF effectively decouples diverse tissue patterns. It establishes a new <strong>state-of-the-art</strong> performance, and demonstrates robust <strong>zero-shot generalization</strong> to cross-species data.
+                </p>
+            </div>
+        </section>
+
+
+            <div class="figure">
+                <img src="figures/Latent_Pathway.png" alt="Overview of Framework">
+                <p class="caption">MoLF (Mixture-of-Latent-Flow) Overview</p>
+            </div>
+            
+    <section>
+        <h2>Motivation & Method</h2>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom: 1.5rem; position: relative; padding-left: 20px;">
+                <i class="fas fa-microscope" style="position: absolute; left: -5px; top: 4px; color: #209cee;"></i>
+                <strong>The Cost-Scale Disparity:</strong> 
+                Spatial transcriptomics (ST) offers high-resolution molecular profiling of great clinical value, yet it remains prohibitively expensive and time-consuming. In contrast, H&E histology is ubiquitous and cost-effective, motivating the need for scalable inference directly from standard pathology slides.
+            </li>
+
+            <li style="margin-bottom: 1.5rem; position: relative; padding-left: 20px;">
+                <i class="fas fa-times-circle" style="position: absolute; left: -5px; top: 4px; color: #e74c3c;"></i>
+                <strong>Limitations of Single-Tissue Models:</strong> 
+                Existing methods are largely restricted to single-cancer models. These approaches are limited by data scarcity and fail to leverage the underlying histogenomic features that are conserved across different malignancies.
+            </li>
+
+            <li style="margin-bottom: 1.5rem; position: relative; padding-left: 20px;">
+                <i class="fas fa-project-diagram" style="position: absolute; left: -5px; top: 4px; color: #f39c12;"></i>
+                <strong>The Pan-Cancer Challenge:</strong> 
+                While unified modeling offers a solution, the extreme heterogeneity of diverse tissues poses a significant optimization challenge. Standard monolithic architectures struggle to reconcile conflicting morphological patterns from different organs within a single parameter space.
+            </li>
+
+            <li style="margin-bottom: 1.5rem; position: relative; padding-left: 20px;">
+                <i class="fas fa-check-circle" style="position: absolute; left: -5px; top: 4px; color: #27ae60;"></i>
+                <strong>Our Solution (MoLF):</strong> 
+                We propose <strong>MoLF</strong>, a pan-cancer framework designed to resolve this heterogeneity by employing a Mixture-of-Experts strategy.
+                
+                <ul style="list-style-type: none; padding-left: 0; margin-top: 0.8rem; border-left: 2px solid #eee; padding-left: 15px;">
+                    <li style="margin-bottom: 0.8rem; font-size: 0.95rem;">
+                        <i class="fas fa-compress-alt" style="color: #666; margin-right: 6px;"></i>
+                        <strong>Stage I (Latent Compression):</strong> A Transformer-based VAE compresses high-dimensional gene expression into a structured latent manifold, reducing noise and capturing essential molecular features.
+                    </li>
+                    <li style="font-size: 0.95rem;">
+                        <i class="fas fa-bezier-curve" style="color: #666; margin-right: 6px;"></i>
+                        <strong>Stage II (Generative Flow):</strong> A Conditional Flow Matching model, parameterized by a Mixture-of-Experts (MoE) velocity field, transports random noise onto this manifold, conditioned directly on H&E morphological features.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+        <section>
+            <h2>Experiments & Results</h2>
+            
+    <div style="margin-bottom: 2rem;">
+        <h3 style="text-align: left; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">State-of-the-Art Performance</h3>
+        <p>
+            We evaluated MoLF on the <strong>HEST-1k pan-cancer benchmark</strong>. Our results show that MoLF consistently outperforms current state-of-the-art methods:
+        </p>
+        <ul style="margin-bottom: 1.5rem;">
+            <li><strong>Highly Variable Genes (HVG):</strong> Achieves highest predictive correlation across distinct cancer types.</li>
+            <li><strong>Hallmark Pathways:</strong> Superior performance across Low, Mid, and High variance gene tiers.</li>
+        </ul>
+        
+        <div class="figure">
+            <img src="figures/tables.png" alt="SOTA Performance Table" style="max-width: 60%; display: block; margin: 0 auto; border: 1px solid #eee; border-radius: 8px;">
+        </div>
+    </div>
+
+       
+    <h3 style="text-align: left; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; margin-top: 3rem;">Mechanism Validation: Synthetic 8-Gaussian</h3>
+        
+        <div style="display: flex; gap: 40px; align-items: center; margin-bottom: 3rem; flex-wrap: wrap;">
+            
+            <div style="flex: 1; min-width: 300px;">
+                <p style="margin-top: 0;">
+                    To isolate inductive bias, we compared MoLF against a dense baseline on a synthetic 8-Gaussian distribution.
+                </p>
+                <p>
+                    The <strong>Dense Baseline</strong> (Right) suffers from severe averaging artifacts due to shared parameterization. 
+                </p>
+                <p>
+                    In contrast, <strong>MoLF</strong> (Left) mitigates these artifacts by routing inputs to specialized experts, achieving significantly sharper mode separation.
+                </p>
+            </div>
+
+            <div style="flex: 1.2; min-width: 300px;">
+                <div class="figure" style="margin: 0;">
+                    <img src="figures/eight_gaussians_combined.png" alt="Synthetic Gaussian Experiment" style="width: 100%; display: block; border-radius: 8px;">
+                    <p class="caption">MoLF (Sharper Modes) vs. Dense Baseline (Artifacts)</p>
+                </div>
+            </div>
+
+        </div>
+
+
+            <h3 style="text-align: left; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;" >Geometric Analysis of Generative Transport</h3>
+            
+            <p>
+                We first visualize the <strong>global manifold alignment</strong>. The initial Gaussian noise (red, left) is transported in a single ODE step to a structured manifold (red, right) that well aligns with the ground truth gene distribution (blue). This confirms the model successfully approximates the target distribution.
+            </p>
+            <div class="figure" style="margin-bottom: 3rem;">
+                <img src="figures/macro.png" alt="Macro-scale Manifold Alignment" style="max-width: 90%; display: block; margin: 0 auto;">
+                <p class="caption">Macro-scale Manifold Alignment</p>
+            </div>
+
+            <p>
+                At a finer granularity, tracing individual patch trajectories demonstrates <strong>micro-scale precision</strong>. The model learns specific paths transporting random noise to the correct target gene expression, effectively solving the conditional optimal transport problem.
+            </p>
+            <div class="figure" style="margin-bottom: 2rem;">
+                <img src="figures/micro.png" alt="Micro-scale Patch Trajectories" style="max-width: 90%; display: block; margin: 0 auto;">
+                <p class="caption">Micro-scale Trajectory Analysis</p>
+            </div>
+
+            <h3 style="text-align: left; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">Expert Specialization Analysis</h3>
+            
+            <p>
+                The UMAP visualization below shows latent gene embeddings colored by cancer type (Left) and by the active Expert (Right). 
+            </p>
+            <p>
+                Notably, <strong>experts are not segregated by cancer type</strong> (e.g., there is no single "Lung Cancer Expert"). Instead, they work collaboratively, with multiple experts contributing to different regions of the latent space across all tissues. This allows MoLF to learn shared biological motifs rather than overfitting to specific datasets. 
+                Crucially, this strategy ensures that <strong>collaborative experts adapt to new cancer types better than rigid cancer specialists</strong>, as they can flexibly recombine learned biological primitives to characterize unseen tissues.
+            </p>
+            <div class="figure">
+                <img src="figures/experts.png" alt="Expert Specialization UMAP" style="max-width: 90%; display: block; margin: 0 auto;">
+                <p class="caption">Distributed Expert Strategy</p>
+            </div>
+
+
+            <h3 style="text-align: left; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">Zero-shot Cross-species Generalization</h3>
+                <p>
+                    We evaluated MoLF on a <strong>zero-shot task</strong>: training on human data and testing on the <strong>HEST1k Mouse Melanoma</strong> dataset.
+                </p>
+                <p>
+                    The <strong>Pan-Cancer MoLF significantly outperforms the tissue-aligned baseline</strong>. This validates our core hypothesis: the diversity of the pan-cancer dataset forces the Mixture-of-Experts to decompose visual signals into fundamental biological primitives. By learning these reusable, invariant motifs, MoLF maintains predictive stability even across species barriers.
+                </p>
+                    <div class="figure">
+                <img src="figures/zero-shot.png" alt="zero-shot" style="max-width: 60%; display: block; margin: 0 auto;">
+                <p class="caption">Zero-shot Cross-species Generalization</p>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>BibTeX</h2>
+            <div class="citation">@article{hu2026molf,
+  title={MoLF: Mixture-of-Latent-Flow for Pan-Cancer Spatial Gene Expression Prediction from Histology},
+  author={Hu, Susu and Speidel, Stefanie},
+  journal={arXiv preprint arXiv:2401.xxxxx},
+  year={2026}
+}</div>
+        </section>
+
+        <footer>
+            <p>This website is licensed under a <a href="#">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
