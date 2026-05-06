@@ -1,0 +1,55 @@
+model: molf 
+debug: true
+PFM_name: univ2
+batch_size: 1
+num_epochs: 1000
+lr: 5e-5
+weight_decay: 0.01
+dropout_rate: 0.1
+attention_type: standard # standard, i used to have flash attention 
+spatial_encoding:
+  use_spatial_encoding: true
+  spatial_transformer_heads: 12
+  spatial_transformer_layers: 1
+gene_autoencoder: # not used when gene_vae_pretrained_path is provided
+  n_heads: 4
+  n_layers: 1
+  model_dim: 128
+  latent_dim: 32
+gene_vae_pretrained_path: gene_vae/run_20260506_152909/
+hidden_dim: 256
+onco_onehot_dim: 29
+early_stop_patience: 50
+cross_attn_heads: 4
+loss_config:
+  flow_loss_weight: 1.
+  gene_loss_weight: 1.
+  kl_loss_weight: 1e-6
+  load_balancing_loss_weight: 1.
+mixture_of_expert:
+  use_moe: true
+  num_experts: 6
+  expert_dim: 256
+  expert_heads: 4
+  expert_layers: 1
+  gating_hidden_dim: 128
+  moe_dropout: 0.1
+  top_k: 2
+  gating_lr: 1e-5
+velocity_head: # when not using MoE, this is just a standard transformer decoder
+  model_dim: 256 # num_experts * expert_dim
+  n_head: 4
+CFG_params:
+  # CFG_scale: 3.0 # 1.0 means no CFG, >1.0 amplifies the conditioning, <1.0 reduces the conditioning, only matters for sampling
+  CFG_dropout: 0.1
+paths_config:
+  metadata_path: [YOUR_PATH_TO]/hest_data/HEST_v1_1_0.csv
+  gene_list_path: data/Hallmark/Hallmark_n_HVG50_genes.yaml
+  path_way_dict_path: data/Hallmark/final_hallmark_genes.pkl
+  patches_path: [YOUR_PATH_TO]/hest_data/patches/
+  root: [YOUR_PATH_TO]/hest_data/
+  wsis_path: [YOUR_PATH_TO]/hest_data/wsis/
+  splits_path: data/Hest_Bench/hest_pathway_clean_split_0
+  st_path: [YOUR_PATH_TO]/hest_data/st/
+comments: MoLF top 2/6,  split 0, debug
+wandb_project_name: MoLF_clean_code
