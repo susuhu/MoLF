@@ -1,0 +1,25 @@
+model: genetransformerautoencoder
+num_epochs: 5000
+lr: 5e-5
+weight_decay: 0.01
+dropout_rate: 0.1
+gene_autoencoder:
+  n_heads: 4
+  n_layers: 1
+  model_dim: 512
+  latent_dim: 128
+  kl_loss_weight: 1e-7
+early_stop_patience: 50
+PFM_name: univ2
+paths_config:
+  metadata_path: 
+    /mnt/ceph/tco/TCO-Staff/Homes/hususu/Data/hest_data/HEST_v1_1_0.csv
+  gene_list_path: 
+    data/Hallmark/Hallmark_n_HVG50_genes.yaml
+  patches_path: /mnt/ceph/tco/TCO-Staff/Homes/hususu/Data/hest_data/patches/
+  root: /mnt/ceph/tco/TCO-Staff/Homes/hususu/Data/hest_data/
+  wsis_path: /mnt/ceph/tco/TCO-Staff/Homes/hususu/Data/hest_data/wsis/
+  splits_path: 
+    data/Hest_Bench/hest_pathway_clean_split_0
+  st_path: /mnt/ceph/tco/TCO-Staff/Homes/hususu/Data/hest_data/st/
+wandb_project_name: latent_flow_autoencoder
