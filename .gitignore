@@ -5,7 +5,7 @@ configs/training_config_latent_moe_local.yml
 configs/autoencoder_config_local.yml
 
 *.pth
-*.pt
+gene_vae/*.pt
 *.npy
 *.joblib
 
