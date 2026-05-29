@@ -11,3 +11,5 @@ gene_vae/*.pt
 
 
 */__pycache__
+
+hf_download_model.py

@@ -1,6 +1,5 @@
 import os
 
-# os.environ["WANDB_API_KEY"] = "216b0b2b67156d6972ad561106916d38c420a128"
 import sys
 import datetime
 import argparse

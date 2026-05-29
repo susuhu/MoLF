@@ -13,6 +13,9 @@
 * **Zero-Shot Generalization:** Demonstrates robust cross-species transfer (Human $\rightarrow$ Mouse) by learning invariant biological motifs.
 * **Optimal Transport:** Efficiently maps random noise to a structured latent gene manifold in a single ODE step.
 
+> 💡 **Need low-compute, high-throughput precision for routine diagnostics?** 
+> Check out our sister project, [HistoPrism](https://github.com/susuhu/HistoPrism)(ICLR 2026). While MoLF is built for exploratory robustness across diverse datasets, HistoPrism is highly optimized to deliver peak in-distribution accuracy for standardized human tissue screening and biomarker discovery.
+
 ### 🛠️ Framework
 1.  **Latent Compression:** A Transformer-VAE compresses high-dimensional gene expression into a structured manifold.
 2.  **Generative Flow:** A Conditional Flow Matching model, parameterized by an MoE velocity field, generates expressions conditioned on H&E patches.
