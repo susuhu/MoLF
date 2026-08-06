@@ -1,23 +1,24 @@
-# [ICML 2026] MoLF: Mixture-of-Latent-Flow
+# [ICML 2026] MoLF — Mixture-of-Latent-Flow
 ### Pan-Cancer Spatial Gene Expression Prediction from Histology
 
-[[📄 Paper](http://arxiv.org/abs/2602.02282)] [[🌐 Project Page](https://susuhu.github.io/MoLF/)] [[💻 Code](https://github.com/susuhu/MoLF)]
-
+[![Paper](https://img.shields.io/badge/Paper-arXiv-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white)](http://arxiv.org/abs/2602.02282)
+[![Project Page](https://img.shields.io/badge/Project_Page-Website-1081c1?style=for-the-badge&logo=google-chrome&logoColor=white)](https://susuhu.github.io/MoLF/)
+[![Code](https://img.shields.io/badge/Code-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/susuhu/MoLF)
 ---
 
-**MoLF** is a generative framework for scalable **pan-cancer histogenomics**. It utilizes a **Mixture-of-Experts (MoE)** velocity field within a **conditional Flow Matching** framework to predict spatial gene expression directly from standard H&E histology.
+**MoLF** is a next-generation generative framework for scalable **pan-cancer histogenomics**. It combines a **Mixture-of-Experts (MoE)** velocity field with **conditional Flow Matching** to predict spatial gene expression directly from standard H&E histology.
 
-### 💡 Key Highlights
-* **State-of-the-Art:** Outperforms existing methods on the HEST-1k pan-cancer benchmark.
-* **Scalable Architecture:** Decouples diverse tissue patterns by routing morphological features through specialized experts.
-* **Zero-Shot Generalization:** Demonstrates robust cross-species transfer (Human $\rightarrow$ Mouse) by learning invariant biological motifs.
-* **Optimal Transport:** Efficiently maps random noise to a structured latent gene manifold in a single ODE step.
+### ✨ Why MoLF?
+* **Robust pan-cancer prediction** on the HEST-1k benchmark.
+* **Expert-conditioned scaling** that routes tissue morphology through specialized latent flow experts.
+* **Cross-species transfer** capability with strong Human → Mouse generalization.
+* **Single-step latent transport** from noise to structured gene manifolds using an ODE-based flow.
 
 > 💡 **Need low-compute, high-throughput precision for routine diagnostics?** 
 > Check out our sister project, [HistoPrism](https://github.com/susuhu/HistoPrism)(ICLR 2026). While MoLF is built for exploratory robustness across diverse datasets, HistoPrism is highly optimized to deliver peak in-distribution accuracy for standardized human tissue screening and biomarker discovery.
 
-### 🛠️ Framework
-1.  **Latent Compression:** A Transformer-VAE compresses high-dimensional gene expression into a structured manifold.
+### 🧠 Core Framework
+1. **Latent Compression:** A Transformer-VAE compresses high-dimensional gene expression into a structured latent manifold.
 2.  **Generative Flow:** A Conditional Flow Matching model, parameterized by an MoE velocity field, generates expressions conditioned on H&E patches.
 
 ![MoLF Overview](figures/MoLF_overview.png)
