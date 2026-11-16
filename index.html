@@ -3,152 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoLF: Project Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>MoLF — Mixture-of-Latent-Flow</title>
+    <meta name="description" content="MoLF: Mixture-of-Latent-Flow for pan-cancer spatial gene expression prediction from histology. ICML 2026.">
+    <meta name="theme-color" content="#eef2f7">
+    <meta name="color-scheme" content="light">
 
     <style>
+
         :root {
-            --primary-color: #209cee;
-            --text-color: #4a4a4a;
-            --bg-color: #ffffff;
-            --link-color: #3273dc;
+            color-scheme: light;
+            --bg: #f7f8fb;
+            --hero: #eef2f7;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --muted: #526178;
+            --border: #d6dee9;
+            --accent: #9a3412;
+            --blue: #245695;
+            --hover: #e6edf5;
         }
 
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Noto Sans', sans-serif;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 15px;
+            line-height: 1.85;
         }
-
-        h1, h2, h3 {
-            font-family: 'Google Sans', sans-serif;
-            color: #363636;
-            text-align: center;
-        }
-
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; line-height: 1.2; }
-        h2 { font-size: 1.75rem; margin-top: 2rem; margin-bottom: 1rem; }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header Section */
-        .hero {
-            padding: 3rem 1.5rem;
-            text-align: center;
-        }
-
-        .project-title { font-weight: 700; }
-        .project-subtitle { font-size: 1.5rem; font-weight: 400; color: #666; margin-top: 0; }
-
-        /* Authors */
-        .authors { font-size: 1.2rem; margin-top: 1.5rem; }
-        .author-block { display: inline-block; margin-right: 15px; }
-        .author-block a { color: var(--link-color); text-decoration: none; }
+        a { color: var(--accent); text-underline-offset: 4px; }
+        a:hover { text-decoration-color: currentColor; }
+        a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+        h1, h2, h3 { margin: 0; font-weight: 700; line-height: 1.4; text-wrap: pretty; }
+        h2 { color: var(--accent); font-size: 24px; }
+        h3 { font-size: 18px; }
+        p { margin: 16px 0; }
+        strong { font-weight: 650; }
+        .container { width: min(100% - 64px, 1088px); margin-inline: auto; }
+        .skip-link { position: absolute; top: -100px; left: 20px; z-index: 2; padding: 8px 16px; background: var(--surface); }
+        .skip-link:focus { top: 12px; }
+        .site-header { background: var(--surface); border-bottom: 1px solid var(--border); }
+        .site-nav { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .site-brand { color: var(--text); font-weight: 700; text-decoration: none; }
+        .nav-links { display: flex; gap: 24px; flex-wrap: wrap; font-size: 13px; }
+        .nav-links a { color: var(--muted); text-decoration: none; }
+        .nav-links a:hover { color: var(--accent); }
+        .hero { background: var(--hero); border-bottom: 1px solid var(--border); padding: 64px 0 56px; }
+        .eyebrow { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin: 0 0 16px; }
+        .project-title { font-size: clamp(30px, 4.5vw, 44px); letter-spacing: -1.3px; line-height: 1.2; }
+        .project-subtitle { max-width: 780px; margin-top: 16px; color: var(--muted); font-size: clamp(20px, 2.8vw, 27px); font-weight: 400; line-height: 1.5; }
+        .authors { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 28px; font-size: 16px; }
+        .author-block a { font-weight: 600; text-decoration: none; }
         .author-block a:hover { text-decoration: underline; }
-        .affiliations { font-size: 1rem; color: #666; margin-top: 10px; }
-
-        /* Buttons */
-        .button-container { margin-top: 25px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn { background-color: #363636; color: white; border-radius: 30px; padding: 10px 25px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 8px; transition: background-color 0.3s; }
-        .btn:hover { background-color: #555; }
-        .btn.light { background-color: #f5f5f5; color: #363636; border: 1px solid #dbdbdb; }
-        .btn.light:hover { background-color: #e8e8e8; }
-
-        /* Abstract */
-        .abstract-section { background-color: #f5f5f5; padding: 2rem; border-radius: 10px; margin-top: 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .abstract-text { text-align: justify; max-width: 800px; margin: 0 auto; }
-
-        /* Figures */
-        .figure { width: 100%; margin: 2rem 0; text-align: center; }
-        .figure img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .caption { font-size: 0.9rem; color: #666; margin-top: 8px; font-weight: 600; }
-
-        /* Code & Citation */
-        .citation { background-color: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace; font-size: 0.9rem; white-space: pre-wrap; text-align: left; }
-        footer { margin-top: 4rem; padding: 2rem; text-align: center; color: #999; font-size: 0.9rem; }
+        sup { font-size: 10px; margin-left: 3px; }
+        .affiliations { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 24px; max-width: 900px; color: var(--muted); font-size: 12px; margin-top: 16px; }
+        .affiliations sup { margin: 0 4px 0 0; }
+        .button-container { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 18px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 13px; font-weight: 500; text-decoration: none; transition: background .2s ease, border-color .2s ease; }
+        .btn:hover { background: var(--hover); border-color: var(--muted); }
+        .btn svg { width: 16px; height: 16px; }
+        main { padding-block: 40px 64px; }
+        section { scroll-margin-top: 24px; min-width: 0; }
+        .research-block { --block-accent: var(--accent); padding: 28px; border: 1px solid var(--border); border-top: 3px solid var(--block-accent); border-radius: 10px; background: var(--surface); background: color-mix(in srgb, var(--block-accent) 3%, var(--surface)); }
+        .abstract-text { max-width: 950px; }
+        .abstract-text p { margin-bottom: 0; }
+        .method-section { --block-accent: var(--blue); margin-top: 48px; }
+        .method-section h2 { color: var(--blue); }
+        .method-list { list-style: none; padding: 0; margin: 24px 0 0; counter-reset: method; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 32px; }
+        .method-list > li { position: relative; padding-left: 36px; counter-increment: method; min-width: 0; font-size: 14px; }
+        .method-list > li::before { content: "0" counter(method); position: absolute; left: 0; top: 0; color: var(--blue); font-size: 12px; font-weight: 700; }
+        .stage-list { list-style: none; padding-left: 16px; margin-top: 16px; border-left: 2px solid var(--border); }
+        .stage-list li + li { margin-top: 12px; }
+        .results-section { margin-top: 56px; }
+        .result-block { padding-block: 28px; border-bottom: 1px solid var(--border); }
+        .result-block:last-child { border-bottom: 0; padding-bottom: 0; }
+        .result-block h3 { color: var(--text); }
+        .result-block ul { padding-left: 22px; }
+        .experiment-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 32px; align-items: center; margin-top: 24px; }
+        .experiment-grid > * { min-width: 0; }
+        .experiment-grid p:first-child { margin-top: 0; }
+        .figure { margin: 28px 0; text-align: center; }
+        .figure img { display: block; max-width: 100%; height: auto; margin-inline: auto; background: white; border: 1px solid var(--border); border-radius: 10px; }
+        .overview-figure { margin-block: 32px 0; }
+        .compact-figure img { width: 680px; }
+        .wide-figure img { width: 960px; }
+        .experiment-grid .figure { margin: 0; }
+        .caption { color: var(--muted); font-size: 12px; line-height: 1.7; margin: 12px 0 0; }
+        .table-panel { margin-block: 28px; }
+        .table-heading { margin: 0; padding: 20px; border: 1px solid var(--border); border-bottom: 0; border-radius: 10px 10px 0 0; background: var(--surface); line-height: 1.6; }
+        .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 0 0 10px 10px; background: var(--surface); }
+        .table-scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+        .result-table { width: 100%; min-width: 820px; border-collapse: separate; border-spacing: 0; font-size: 13px; line-height: 1.6; font-variant-numeric: tabular-nums; }
+        .table-label { display: block; margin-bottom: 4px; color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+        .table-title { font-size: 16px; font-weight: 650; }
+        .result-table th, .result-table td { padding: 12px 16px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--border); }
+        .result-table thead th { background: var(--hero); font-size: 12px; font-weight: 600; }
+        .result-table tr > :first-child { position: sticky; left: 0; z-index: 1; text-align: left; background: var(--surface); }
+        .result-table thead tr > :first-child { background: var(--hero); }
+        .result-table tbody th { font-weight: 500; }
+        .result-table tbody tr:last-child > * { border-bottom: 0; }
+        .result-table .ours-column { background: #fcf6f3; }
+        .result-table thead .ours-column { color: var(--accent); }
+        .result-table .summary-row > * { background: var(--hero); border-top: 1px solid var(--border); }
+        .result-table .ours-row > * { background: #fcf6f3; border-top: 1px solid var(--border); }
+        .result-table .summary-row > th:first-child { background: var(--hero); }
+        .result-table .ours-row > th:first-child { background: #fcf6f3; }
+        .result-table .ours-row th, .result-table .summary-row th { font-weight: 650; }
+        .result-table .uncertainty { color: var(--muted); font-size: 11px; font-weight: 400; }
+        .result-table strong { font-weight: 750; }
+        .table-note { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 24px; margin: 10px 0 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+        .hallmark-table { min-width: 720px; }
+        .transfer-table { min-width: 0; }
+        .transfer-table tbody th { white-space: normal; }
+        @media (max-width: 760px) {
+            .result-table th, .result-table td { padding: 12px; }
+            .table-heading { padding: 16px; }
+            .transfer-table tr > :first-child { position: static; }
+        }
+        .citation-section { --block-accent: var(--blue); margin-top: 48px; }
+        .citation-section h2 { color: var(--blue); }
+        .citation { margin: 20px 0 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; }
+        footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+        footer .container { display: flex; gap: 16px 32px; justify-content: space-between; align-items: baseline; }
+        footer p { margin: 0; }
+        footer a { color: var(--muted); }
+        @media (max-width: 760px) {
+            .container { width: calc(100% - 40px); }
+            .hero { padding-block: 44px 40px; }
+            .project-title { letter-spacing: -.7px; }
+            .affiliations, .method-list, .experiment-grid { grid-template-columns: 1fr; }
+            .research-block { padding: 24px; }
+            .method-list { gap: 24px; }
+            .experiment-grid { gap: 20px; }
+            footer .container { flex-direction: column; gap: 12px; }
+        }
+        @media (max-width: 440px) {
+            .site-nav { align-items: flex-start; padding-block: 12px; gap: 8px; flex-direction: column; }
+            .nav-links { gap: 20px; }
+            .nav-links a { display: inline-flex; align-items: center; min-height: 44px; }
+            .research-block { padding: 20px; }
+            h2 { font-size: 22px; }
+            .method-list > li { padding-left: 30px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .btn { transition: none; }
+        }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <header class="hero">
+    <a class="skip-link" href="#overview">Skip to content</a>
+    <div class="site-header">
+        <nav class="site-nav container" aria-label="Main navigation">
+            <a class="site-brand" href="#top">MoLF: Mixture-of-Latent-Flow</a>
+            <div class="nav-links">
+                <a href="#method">Method</a>
+                <a href="#results">Results</a>
+                <a href="#citation">Citation</a>
+                <a href="https://susuhu.github.io/intro/">Susu Hu ↗</a>
+            </div>
+        </nav>
+    </div>
+    <header class="hero" id="top">
+        <div class="container">
+            <p class="eyebrow">ICML 2026 · Research project</p>
             <h1 class="project-title">MoLF: Mixture-of-Latent-Flow</h1>
-            <h2 class="project-subtitle">Pan-Cancer Spatial Gene Expression Prediction from Histology</h2>
+            <p class="project-subtitle">Pan-Cancer Spatial Gene Expression Prediction from Histology</p>
 
             <div class="authors">
-                <span class="author-block"><a href="https://susuhu.github.io/intro/" target="_blank">Susu Hu</a><sup>1,2,3, 4</sup></span>
-                <span class="author-block"><a href="https://www.nct-dresden.de/en/research/departments-and-groups/translational-surgical-oncology" target="_blank">Stefanie Speidel</a><sup>1,2,3,4</sup></span>
+                <span class="author-block"><a href="https://susuhu.github.io/intro/" target="_blank" rel="noopener noreferrer">Susu Hu</a><sup>1,2,3,4</sup></span>
+                <span class="author-block"><a href="https://www.nct-dresden.de/en/research/departments-and-groups/translational-surgical-oncology" target="_blank" rel="noopener noreferrer">Stefanie Speidel</a><sup>1,2,3,4</sup></span>
             </div>
 
             <div class="affiliations">
-                <span><sup>1</sup>National Center for Tumor Disease Dresden (NCT), Germany</span> &nbsp;&nbsp;
-                <span><sup>2</sup>German Cancer Research Center (DKFZ)</span> &nbsp;&nbsp;
+                <span><sup>1</sup>National Center for Tumor Disease Dresden (NCT), Germany</span>
+                <span><sup>2</sup>German Cancer Research Center (DKFZ)</span>
                 <span><sup>3</sup>Dresden University of Technology, Germany</span>
                 <span><sup>4</sup>Helmholtz-Zentrum Dresden-Rossendorf (HZDR), Germany</span>
             </div>
 
             <div class="button-container">
-                <a href="http://arxiv.org/abs/2602.02282" class="btn"><i class="fas fa-file-pdf"></i> Paper</a>
-                <a href="https://github.com/susuhu/MoLF" class="btn light"><i class="fab fa-github"></i> Code</a>
+                <a href="https://arxiv.org/abs/2602.02282" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg> Paper</a>
+                <a href="https://github.com/susuhu/MoLF" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m8 5-7 7 7 7m8-14 7 7-7 7m-3-16-2 18"/></svg> Code</a>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <section class="abstract-section" style="padding: 1.5rem; margin-top: 1.5rem;">
-            <h2 style="margin-top: 0; margin-bottom: 0.8rem; font-size: 1.5rem;">TL;DR</h2>
-            <div class="abstract-text" style="margin: 0;">
-                <p style="margin: 0;">
+    <main class="container" id="content">
+
+        <section class="research-block" id="overview" aria-labelledby="overview-heading">
+            <h2 id="overview-heading">TL;DR</h2>
+            <div class="abstract-text">
+                <p>
                     We introduce <strong>MoLF</strong> (Mixture-of-Latent-Flow), a generative model for scalable <strong>pan-cancer histogenomics</strong>. By leveraging a <strong>Mixture-of-Experts (MoE)</strong> velocity field within a <strong>conditional Flow Matching</strong> framework, MoLF effectively decouples diverse tissue patterns. It establishes a new <strong>state-of-the-art</strong> performance, and demonstrates robust <strong>zero-shot generalization</strong> to cross-species data.
                 </p>
             </div>
         </section>
 
 
-            <div class="figure">
-                <img src="figures/MoLF_overview.png" alt="Overview of Framework">
+            <div class="figure overview-figure">
+                <img src="figures/MoLF_overview.png" alt="Overview of Framework" width="2062" height="970" loading="eager" decoding="async">
                 <p class="caption">MoLF (Mixture-of-Latent-Flow) Overview</p>
             </div>
             
-    <section>
-        <h2>Motivation & Method</h2>
-        <ul style="list-style-type: none; padding-left: 0;">
-            <li style="margin-bottom: 1.5rem; position: relative; padding-left: 20px;">
-                <i class="fas fa-microscope" style="position: absolute; left: -5px; top: 4px; color: #209cee;"></i>
+    <section class="research-block method-section" id="method" aria-labelledby="method-heading">
+        <h2 id="method-heading">Motivation &amp; Method</h2>
+        <ul class="method-list">
+            <li>
                 <strong>The Cost-Scale Disparity:</strong> 
                 Spatial transcriptomics (ST) offers high-resolution molecular profiling of great clinical value, yet it remains prohibitively expensive and time-consuming. In contrast, H&E histology is ubiquitous and cost-effective, motivating the need for scalable inference directly from standard pathology slides.
             </li>
 
-            <li style="margin-bottom: 1.5rem; position: relative; padding-left: 20px;">
-                <i class="fas fa-times-circle" style="position: absolute; left: -5px; top: 4px; color: #e74c3c;"></i>
+            <li>
                 <strong>Limitations of Single-Tissue Models:</strong> 
                 Existing methods are largely restricted to single-cancer models. These approaches are limited by data scarcity and fail to leverage the underlying histogenomic features that are conserved across different malignancies.
             </li>
 
-            <li style="margin-bottom: 1.5rem; position: relative; padding-left: 20px;">
-                <i class="fas fa-project-diagram" style="position: absolute; left: -5px; top: 4px; color: #f39c12;"></i>
+            <li>
                 <strong>The Pan-Cancer Challenge:</strong> 
                 While unified modeling offers a solution, the extreme heterogeneity of diverse tissues poses a significant optimization challenge. Standard monolithic architectures struggle to reconcile conflicting morphological patterns from different organs within a single parameter space.
             </li>
 
-            <li style="margin-bottom: 1.5rem; position: relative; padding-left: 20px;">
-                <i class="fas fa-check-circle" style="position: absolute; left: -5px; top: 4px; color: #27ae60;"></i>
+            <li>
                 <strong>Our Solution (MoLF):</strong> 
                 We propose <strong>MoLF</strong>, a pan-cancer framework designed to resolve this heterogeneity by employing a Mixture-of-Experts strategy.
                 
-                <ul style="list-style-type: none; padding-left: 0; margin-top: 0.8rem; border-left: 2px solid #eee; padding-left: 15px;">
-                    <li style="margin-bottom: 0.8rem; font-size: 0.95rem;">
-                        <i class="fas fa-compress-alt" style="color: #666; margin-right: 6px;"></i>
+                <ul class="stage-list">
+                    <li>
                         <strong>Stage I (Latent Compression):</strong> A Transformer-based VAE compresses high-dimensional gene expression into a structured latent manifold, reducing noise and capturing essential molecular features.
                     </li>
-                    <li style="font-size: 0.95rem;">
-                        <i class="fas fa-bezier-curve" style="color: #666; margin-right: 6px;"></i>
+                    <li>
                         <strong>Stage II (Generative Flow):</strong> A Conditional Flow Matching model, parameterized by a Mixture-of-Experts (MoE) velocity field, transports random noise onto this manifold, conditioned directly on H&E morphological features.
                     </li>
                 </ul>
@@ -156,31 +242,184 @@
         </ul>
     </section>
 
-        <section>
-            <h2>Experiments & Results</h2>
+        <section class="results-section" id="results" aria-labelledby="results-heading">
+            <h2 id="results-heading">Experiments &amp; Results</h2>
             
-    <div style="margin-bottom: 2rem;">
-        <h3 style="text-align: left; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">State-of-the-Art Performance</h3>
+    <article class="result-block">
+        <h3>State-of-the-Art Performance</h3>
         <p>
             We evaluated MoLF on the <strong>HEST-1k pan-cancer benchmark</strong>. Our results show that MoLF consistently outperforms current state-of-the-art methods:
         </p>
-        <ul style="margin-bottom: 1.5rem;">
+        <ul>
             <li><strong>Highly Variable Genes (HVG):</strong> Achieves highest predictive correlation across distinct cancer types.</li>
             <li><strong>Hallmark Pathways:</strong> Superior performance across Low, Mid, and High variance gene tiers.</li>
         </ul>
         
-        <div class="figure">
-            <img src="figures/tables.png" alt="SOTA Performance Table" style="max-width: 60%; display: block; margin: 0 auto; border: 1px solid #eee; border-radius: 8px;">
+        <div class="table-panel" id="hvg-results">
+            <h4 class="table-heading" id="hvg-caption"><span class="table-label">Table 2 · PCC ↑</span><span class="table-title">Top-50 highly variable genes across 10 cancer types</span></h4>
+            <div class="table-scroll" role="region" aria-labelledby="hvg-caption" tabindex="0">
+                <table class="result-table" aria-labelledby="hvg-caption" aria-describedby="hvg-note">
+                    <thead>
+                        <tr>
+                            <th scope="col">Cancer Type</th>
+                            <th scope="col">MLP</th>
+                            <th scope="col">STPath</th>
+                            <th scope="col">STFlow</th>
+                            <th scope="col">STEM</th>
+                            <th scope="col" class="ours-column">MoLF (ours)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">CCRCC</th>
+                            <td>0.194 <span class="uncertainty">± 0.012</span></td>
+                            <td>0.117 <span class="uncertainty">± 0.001</span></td>
+                            <td>0.128 <span class="uncertainty">± 0.037</span></td>
+                            <td>0.096 <span class="uncertainty">± 0.028</span></td>
+                            <td class="ours-column"><strong>0.231</strong> <span class="uncertainty">± 0.065</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">COAD</th>
+                            <td>0.343 <span class="uncertainty">± 0.114</span></td>
+                            <td>0.393 <span class="uncertainty">± 0.185</span></td>
+                            <td>0.310 <span class="uncertainty">± 0.002</span></td>
+                            <td>0.235 <span class="uncertainty">± 0.076</span></td>
+                            <td class="ours-column"><strong>0.406</strong> <span class="uncertainty">± 0.167</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">HCC</th>
+                            <td>0.064 <span class="uncertainty">± 0.045</span></td>
+                            <td>0.094 <span class="uncertainty">± 0.052</span></td>
+                            <td>0.081 <span class="uncertainty">± 0.047</span></td>
+                            <td>0.052 <span class="uncertainty">± 0.015</span></td>
+                            <td class="ours-column"><strong>0.101</strong> <span class="uncertainty">± 0.045</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">IDC</th>
+                            <td>0.561 <span class="uncertainty">± 0.125</span></td>
+                            <td><strong>0.629</strong> <span class="uncertainty">± 0.126</span></td>
+                            <td>0.518 <span class="uncertainty">± 0.078</span></td>
+                            <td>0.376 <span class="uncertainty">± 0.095</span></td>
+                            <td class="ours-column">0.628 <span class="uncertainty">± 0.124</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">LUNG</th>
+                            <td>0.507 <span class="uncertainty">± 0.030</span></td>
+                            <td>0.518 <span class="uncertainty">± 0.028</span></td>
+                            <td>0.465 <span class="uncertainty">± 0.040</span></td>
+                            <td>0.235 <span class="uncertainty">± 0.001</span></td>
+                            <td class="ours-column"><strong>0.525</strong> <span class="uncertainty">± 0.041</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">LYMPH_IDC</th>
+                            <td>0.217 <span class="uncertainty">± 0.071</span></td>
+                            <td>0.182 <span class="uncertainty">± 0.075</span></td>
+                            <td>0.189 <span class="uncertainty">± 0.045</span></td>
+                            <td>0.079 <span class="uncertainty">± 0.020</span></td>
+                            <td class="ours-column"><strong>0.245</strong> <span class="uncertainty">± 0.060</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">PAAD</th>
+                            <td>0.407 <span class="uncertainty">± 0.122</span></td>
+                            <td><strong>0.493</strong> <span class="uncertainty">± 0.100</span></td>
+                            <td>0.416 <span class="uncertainty">± 0.122</span></td>
+                            <td>0.283 <span class="uncertainty">± 0.151</span></td>
+                            <td class="ours-column">0.460 <span class="uncertainty">± 0.084</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">PRAD</th>
+                            <td>0.335 <span class="uncertainty">± 0.065</span></td>
+                            <td>0.257 <span class="uncertainty">± 0.012</span></td>
+                            <td>0.227 <span class="uncertainty">± 0.005</span></td>
+                            <td>0.197 <span class="uncertainty">± 0.074</span></td>
+                            <td class="ours-column"><strong>0.348</strong> <span class="uncertainty">± 0.003</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">READ</th>
+                            <td>0.264 <span class="uncertainty">± 0.040</span></td>
+                            <td><strong>0.280</strong> <span class="uncertainty">± 0.030</span></td>
+                            <td>0.226 <span class="uncertainty">± 0.056</span></td>
+                            <td>0.168 <span class="uncertainty">± 0.013</span></td>
+                            <td class="ours-column">0.275 <span class="uncertainty">± 0.045</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">SKCM</th>
+                            <td>0.515 <span class="uncertainty">± 0.104</span></td>
+                            <td>0.588 <span class="uncertainty">± 0.113</span></td>
+                            <td>0.557 <span class="uncertainty">± 0.087</span></td>
+                            <td>0.237 <span class="uncertainty">± 0.139</span></td>
+                            <td class="ours-column"><strong>0.606</strong> <span class="uncertainty">± 0.127</span></td>
+                        </tr>
+                        <tr class="summary-row">
+                            <th scope="row">Average</th>
+                            <td>0.341 <span class="uncertainty">± 0.160</span></td>
+                            <td>0.361 <span class="uncertainty">± 0.072</span></td>
+                            <td>0.312 <span class="uncertainty">± 0.168</span></td>
+                            <td>0.196 <span class="uncertainty">± 0.004</span></td>
+                            <td class="ours-column"><strong>0.382</strong> <span class="uncertainty">± 0.173</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="table-note" id="hvg-note"><span>Mean ± standard deviation. Higher PCC is better; best result in <strong>bold</strong>.</span> <a href="https://arxiv.org/html/2602.02282v3#S4.T2">Source: paper, Table 2 ↗</a></p>
         </div>
-    </div>
 
-       
-    <h3 style="text-align: left; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; margin-top: 3rem;">Mechanism Validation: Synthetic 8-Gaussian</h3>
+        <div class="table-panel" id="hallmark-results">
+            <h4 class="table-heading" id="hallmark-caption"><span class="table-label">Table 3 · PCC ↑</span><span class="table-title">Variance-stratified Hallmark genes</span></h4>
+            <div class="table-scroll" role="region" aria-labelledby="hallmark-caption" tabindex="0">
+                <table class="result-table hallmark-table" aria-labelledby="hallmark-caption" aria-describedby="hallmark-note">
+                    <thead>
+                        <tr>
+                            <th scope="col">Model</th>
+                            <th scope="col">Low-Var ↑</th>
+                            <th scope="col">Mid-Var ↑</th>
+                            <th scope="col">High-Var ↑</th>
+                            <th scope="col">Overall Avg. ↑</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">MLP</th>
+                            <td>0.225 <span class="uncertainty">± 0.028</span></td>
+                            <td>0.144 <span class="uncertainty">± 0.018</span></td>
+                            <td>0.145 <span class="uncertainty">± 0.143</span></td>
+                            <td>0.171 <span class="uncertainty">± 0.045</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">STFlow</th>
+                            <td>0.158 <span class="uncertainty">± 0.011</span></td>
+                            <td>0.100 <span class="uncertainty">± 0.007</span></td>
+                            <td>0.107 <span class="uncertainty">± 0.003</span></td>
+                            <td>0.122 <span class="uncertainty">± 0.029</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">STPath</th>
+                            <td>0.177 <span class="uncertainty">± 0.016</span></td>
+                            <td>0.113 <span class="uncertainty">± 0.011</span></td>
+                            <td>0.137 <span class="uncertainty">± 0.013</span></td>
+                            <td>0.143 <span class="uncertainty">± 0.031</span></td>
+                        </tr>
+                        <tr class="ours-row">
+                            <th scope="row">MoLF (Ours)</th>
+                            <td><strong>0.242</strong> <span class="uncertainty">± 0.003</span></td>
+                            <td><strong>0.159</strong> <span class="uncertainty">± 0.001</span></td>
+                            <td><strong>0.167</strong> <span class="uncertainty">± 0.006</span></td>
+                            <td><strong>0.185</strong> <span class="uncertainty">± 0.002</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="table-note" id="hallmark-note"><span>Mean ± standard deviation. Higher PCC is better; best result in <strong>bold</strong>.</span> <a href="https://arxiv.org/html/2602.02282v3#S4.T3">Source: paper, Table 3 ↗</a></p>
+        </div>
+    </article>
+
+    <article class="result-block">
+    <h3>Mechanism Validation: Synthetic 8-Gaussian</h3>
         
-        <div style="display: flex; gap: 40px; align-items: center; margin-bottom: 3rem; flex-wrap: wrap;">
+        <div class="experiment-grid">
             
-            <div style="flex: 1; min-width: 300px;">
-                <p style="margin-top: 0;">
+            <div>
+                <p>
                     To isolate inductive bias, we compared MoLF against a dense baseline on a synthetic 8-Gaussian distribution.
                 </p>
                 <p>
@@ -191,9 +430,9 @@
                 </p>
             </div>
 
-            <div style="flex: 1.2; min-width: 300px;">
-                <div class="figure" style="margin: 0;">
-                    <img src="figures/eight_gaussians_combined.png" alt="Synthetic Gaussian Experiment" style="width: 100%; display: block; border-radius: 8px;">
+            <div>
+                <div class="figure">
+                    <img src="figures/eight_gaussians_combined.png" alt="Synthetic Gaussian Experiment" width="915" height="1144" loading="lazy" decoding="async">
                     <p class="caption">MoLF (Sharper Modes) vs. Dense Baseline (Artifacts)</p>
                 </div>
             </div>
@@ -201,25 +440,31 @@
         </div>
 
 
-            <h3 style="text-align: left; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;" >Geometric Analysis of Generative Transport</h3>
+    </article>
+
+    <article class="result-block">
+            <h3>Geometric Analysis of Generative Transport</h3>
             
             <p>
                 We first visualize the <strong>global manifold alignment</strong>. The initial Gaussian noise (red, left) is transported in a <strong>single ODE step</strong> to a structured manifold (red, right) that well aligns with the ground truth gene distribution (blue). This confirms the model successfully approximates the target distribution.
             </p>
-            <div class="figure" style="margin-bottom: 3rem;">
-                <img src="figures/macro.png" alt="Macro-scale Manifold Alignment" style="max-width: 90%; display: block; margin: 0 auto;">
+            <div class="figure wide-figure">
+                <img src="figures/macro.png" alt="Macro-scale Manifold Alignment" width="4800" height="2400" loading="lazy" decoding="async">
                 <p class="caption">Macro-scale Manifold Alignment</p>
             </div>
 
             <p>
                 At a finer granularity, tracing individual patch trajectories demonstrates <strong>micro-scale precision</strong>. The model learns specific paths transporting random noise to the correct target gene expression, effectively solving the conditional optimal transport problem.
             </p>
-            <div class="figure" style="margin-bottom: 2rem;">
-                <img src="figures/micro.png" alt="Micro-scale Patch Trajectories" style="max-width: 90%; display: block; margin: 0 auto;">
+            <div class="figure wide-figure">
+                <img src="figures/micro.png" alt="Micro-scale Patch Trajectories" width="4200" height="5400" loading="lazy" decoding="async">
                 <p class="caption">Micro-scale Trajectory Analysis</p>
             </div>
 
-            <h3 style="text-align: left; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">Expert Specialization Analysis</h3>
+    </article>
+
+    <article class="result-block">
+            <h3>Expert Specialization Analysis</h3>
             
             <p>
                 The UMAP visualization below shows latent gene embeddings colored by cancer type (Left) and by the active Expert (Right). 
@@ -228,41 +473,82 @@
                 Notably, <strong>experts are not segregated by cancer type</strong> (e.g., there is no single "Lung Cancer Expert"). Instead, they work collaboratively, with multiple experts contributing to different regions of the latent space across all tissues. This allows MoLF to learn shared biological motifs rather than overfitting to specific datasets. 
                 Crucially, this strategy ensures that <strong>collaborative experts adapt to new cancer types better than rigid cancer specialists</strong>, as they can flexibly recombine learned biological primitives to characterize unseen tissues.
             </p>
-            <div class="figure">
-                <img src="figures/experts.png" alt="Expert Specialization UMAP" style="max-width: 90%; display: block; margin: 0 auto;">
+            <div class="figure wide-figure">
+                <img src="figures/experts.png" alt="Expert Specialization UMAP" width="5580" height="2580" loading="lazy" decoding="async">
                 <p class="caption">Distributed Expert Strategy</p>
             </div>
 
 
-            <h3 style="text-align: left; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">Zero-shot Cross-species Generalization</h3>
+    </article>
+
+    <article class="result-block">
+            <h3>Zero-shot Cross-species Generalization</h3>
                 <p>
                     We evaluated MoLF on a <strong>zero-shot task</strong>: training on human data and testing on the <strong>HEST1k Mouse Melanoma</strong> dataset.
                 </p>
                 <p>
                     The <strong>Pan-Cancer MoLF significantly outperforms the tissue-aligned baseline</strong>. This validates our core hypothesis: the diversity of the pan-cancer dataset forces the Mixture-of-Experts to decompose visual signals into fundamental biological primitives. By learning these reusable, invariant motifs, MoLF maintains predictive stability even across species barriers.
                 </p>
-                    <div class="figure">
-                <img src="figures/zero-shot.png" alt="zero-shot" style="max-width: 60%; display: block; margin: 0 auto;">
-                <p class="caption">Zero-shot Cross-species Generalization</p>
-            </div>
 
+        <div class="table-panel" id="transfer-results">
+            <h4 class="table-heading" id="transfer-caption"><span class="table-label">Table 5 · PCC ↑</span><span class="table-title">Zero-shot transfer to mouse melanoma</span></h4>
+            <div class="table-scroll" role="region" aria-labelledby="transfer-caption" tabindex="0">
+                <table class="result-table transfer-table" aria-labelledby="transfer-caption" aria-describedby="transfer-note">
+                    <thead>
+                        <tr>
+                            <th scope="col">Model</th>
+                            <th scope="col">PCC ↑</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">MLP</th>
+                            <td>0.145 <span class="uncertainty">± 0.009</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">STPath</th>
+                            <td>0.090 <span class="uncertainty">± 0.000</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">STFlow</th>
+                            <td>0.126 <span class="uncertainty">± 0.023</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MoLF - Skin Cancer Only</th>
+                            <td>0.127 <span class="uncertainty">± 0.047</span></td>
+                        </tr>
+                        <tr class="ours-row">
+                            <th scope="row">MoLF (Ours)</th>
+                            <td><strong>0.202</strong> <span class="uncertainty">± 0.001</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="table-note" id="transfer-note"><span>Mean ± standard deviation. Higher PCC is better; best result in <strong>bold</strong>.</span> <a href="https://arxiv.org/html/2602.02282v3#S4.T5">Source: paper, Table 5 ↗</a></p>
+        </div>
+
+    </article>
         </section>
 
-        <section>
-            <h2>BibTeX</h2>
-            <div class="citation">@article{hu2026molf,
+        <section class="research-block citation-section" id="citation" aria-labelledby="citation-heading">
+            <h2 id="citation-heading">BibTeX</h2>
+            <pre class="citation"><code>@article{hu2026molf,
   title={MoLF: Mixture-of-Latent-Flow for Pan-Cancer Spatial Gene Expression Prediction from Histology},
   author={Hu, Susu and Speidel, Stefanie},
   journal={Proceedings of the 43rd International Conference on Machine Learning (ICML)},
   url={https://arxiv.org/abs/2602.02282},
   year={2026}
-}</div>
+}</code></pre>
         </section>
 
-        <footer>
-            <p>This website is licensed under a <a href="#">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
-        </footer>
-    </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>MoLF · ICML 2026</p>
+            <p>This website is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
