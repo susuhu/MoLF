@@ -31,74 +31,82 @@
             color: var(--text);
             font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             font-size: 15px;
-            line-height: 1.85;
+            line-height: 1.65;
         }
         a { color: var(--accent); text-underline-offset: 4px; }
         a:hover { text-decoration-color: currentColor; }
         a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
         h1, h2, h3 { margin: 0; font-weight: 700; line-height: 1.4; text-wrap: pretty; }
-        h2 { color: var(--accent); font-size: 24px; }
-        h3 { font-size: 18px; }
-        p { margin: 16px 0; }
+        h2 { color: var(--accent); font-size: 22px; }
+        h3 { font-size: 17px; }
+        p { margin: 10px 0; }
         strong { font-weight: 650; }
         .container { width: min(100% - 64px, 1088px); margin-inline: auto; }
         .skip-link { position: absolute; top: -100px; left: 20px; z-index: 2; padding: 8px 16px; background: var(--surface); }
         .skip-link:focus { top: 12px; }
         .site-header { background: var(--surface); border-bottom: 1px solid var(--border); }
-        .site-nav { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .site-nav { min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-block: 8px; }
         .site-brand { color: var(--text); font-weight: 700; text-decoration: none; }
         .nav-links { display: flex; gap: 24px; flex-wrap: wrap; font-size: 13px; }
         .nav-links a { color: var(--muted); text-decoration: none; }
         .nav-links a:hover { color: var(--accent); }
-        .hero { background: var(--hero); border-bottom: 1px solid var(--border); padding: 64px 0 56px; }
-        .eyebrow { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin: 0 0 16px; }
-        .project-title { font-size: clamp(30px, 4.5vw, 44px); letter-spacing: -1.3px; line-height: 1.2; }
-        .project-subtitle { max-width: 780px; margin-top: 16px; color: var(--muted); font-size: clamp(20px, 2.8vw, 27px); font-weight: 400; line-height: 1.5; }
-        .authors { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 28px; font-size: 16px; }
+        .hero { background: var(--hero); border-bottom: 1px solid var(--border); padding: 32px 0; }
+        .eyebrow { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin: 0 0 10px; }
+        .project-title { font-size: clamp(28px, 3.8vw, 36px); letter-spacing: -.9px; line-height: 1.2; }
+        .project-subtitle { max-width: 840px; margin: 10px 0 0; color: var(--muted); font-size: clamp(18px, 2.4vw, 23px); font-weight: 400; line-height: 1.4; }
+        .authors { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 18px; font-size: 15px; }
         .author-block a { font-weight: 600; text-decoration: none; }
         .author-block a:hover { text-decoration: underline; }
         sup { font-size: 10px; margin-left: 3px; }
-        .affiliations { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 24px; max-width: 900px; color: var(--muted); font-size: 12px; margin-top: 16px; }
+        .affiliations { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px 24px; max-width: 900px; color: var(--muted); font-size: 12px; margin-top: 10px; }
         .affiliations sup { margin: 0 4px 0 0; }
-        .button-container { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+        .button-container { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
         .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 18px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 13px; font-weight: 500; text-decoration: none; transition: background .2s ease, border-color .2s ease; }
         .btn:hover { background: var(--hover); border-color: var(--muted); }
         .btn svg { width: 16px; height: 16px; }
-        main { padding-block: 40px 64px; }
+        main { padding-block: 24px 36px; }
         section { scroll-margin-top: 24px; min-width: 0; }
-        .research-block { --block-accent: var(--accent); padding: 28px; border: 1px solid var(--border); border-top: 3px solid var(--block-accent); border-radius: 10px; background: var(--surface); background: color-mix(in srgb, var(--block-accent) 3%, var(--surface)); }
+        .research-block { --block-accent: var(--accent); padding: 20px; border: 1px solid var(--border); border-top: 3px solid var(--block-accent); border-radius: 10px; background: var(--surface); background: color-mix(in srgb, var(--block-accent) 3%, var(--surface)); }
         .abstract-text { max-width: 950px; }
         .abstract-text p { margin-bottom: 0; }
-        .method-section { --block-accent: var(--blue); margin-top: 48px; }
+        .method-section { --block-accent: var(--blue); margin-top: 28px; }
         .method-section h2 { color: var(--blue); }
-        .method-list { list-style: none; padding: 0; margin: 24px 0 0; counter-reset: method; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 32px; }
+        .method-list { list-style: none; padding: 0; margin: 16px 0 0; counter-reset: method; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 28px; }
         .method-list > li { position: relative; padding-left: 36px; counter-increment: method; min-width: 0; font-size: 14px; }
         .method-list > li::before { content: "0" counter(method); position: absolute; left: 0; top: 0; color: var(--blue); font-size: 12px; font-weight: 700; }
-        .stage-list { list-style: none; padding-left: 16px; margin-top: 16px; border-left: 2px solid var(--border); }
-        .stage-list li + li { margin-top: 12px; }
-        .results-section { margin-top: 56px; }
-        .result-block { padding-block: 28px; border-bottom: 1px solid var(--border); }
+        .stage-list { list-style: none; padding-left: 12px; margin-top: 10px; border-left: 2px solid var(--border); }
+        .stage-list li + li { margin-top: 8px; }
+        .results-section { margin-top: 32px; }
+        .result-block { padding-block: 20px; border-bottom: 1px solid var(--border); }
         .result-block:last-child { border-bottom: 0; padding-bottom: 0; }
         .result-block h3 { color: var(--text); }
         .result-block ul { padding-left: 22px; }
-        .experiment-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 32px; align-items: center; margin-top: 24px; }
+        .experiment-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: center; margin-top: 16px; }
         .experiment-grid > * { min-width: 0; }
         .experiment-grid p:first-child { margin-top: 0; }
-        .figure { margin: 28px 0; text-align: center; }
+        .figure { margin: 18px 0; text-align: center; }
         .figure img { display: block; max-width: 100%; height: auto; margin-inline: auto; background: white; border: 1px solid var(--border); border-radius: 10px; }
-        .overview-figure { margin-block: 32px 0; }
-        .compact-figure img { width: 680px; }
-        .wide-figure img { width: 960px; }
+        .overview-figure { margin-block: 20px 0; }
+        .overview-figure img { width: 900px; }
+        .wide-figure img { width: 800px; }
         .experiment-grid .figure { margin: 0; }
-        .caption { color: var(--muted); font-size: 12px; line-height: 1.7; margin: 12px 0 0; }
-        .table-panel { margin-block: 28px; }
-        .table-heading { margin: 0; padding: 20px; border: 1px solid var(--border); border-bottom: 0; border-radius: 10px 10px 0 0; background: var(--surface); line-height: 1.6; }
+        .experiment-grid .figure img { width: auto; max-height: 360px; }
+        .transport-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 10px; }
+        .transport-grid > div { min-width: 0; }
+        .transport-grid p:first-child { margin-top: 0; }
+        .transport-grid .figure { margin-bottom: 0; }
+        .trajectory-figure img { width: auto; max-height: 460px; }
+        .caption { color: var(--muted); font-size: 12px; line-height: 1.6; margin: 8px 0 0; }
+        .figure-original { display: inline-block; margin-left: 8px; font-size: 11px; }
+        .table-panel { margin-block: 18px; }
+        .table-panel:last-child { margin-bottom: 0; }
+        .table-heading { margin: 0; padding: 12px 16px; border: 1px solid var(--border); border-bottom: 0; border-radius: 10px 10px 0 0; background: var(--surface); line-height: 1.5; }
         .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 0 0 10px 10px; background: var(--surface); }
         .table-scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
         .result-table { width: 100%; min-width: 820px; border-collapse: separate; border-spacing: 0; font-size: 13px; line-height: 1.6; font-variant-numeric: tabular-nums; }
         .table-label { display: block; margin-bottom: 4px; color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
         .table-title { font-size: 16px; font-weight: 650; }
-        .result-table th, .result-table td { padding: 12px 16px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--border); }
+        .result-table th, .result-table td { padding: 7px 12px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--border); }
         .result-table thead th { background: var(--hero); font-size: 12px; font-weight: 600; }
         .result-table tr > :first-child { position: sticky; left: 0; z-index: 1; text-align: left; background: var(--surface); }
         .result-table thead tr > :first-child { background: var(--hero); }
@@ -118,33 +126,33 @@
         .transfer-table { min-width: 0; }
         .transfer-table tbody th { white-space: normal; }
         @media (max-width: 760px) {
-            .result-table th, .result-table td { padding: 12px; }
-            .table-heading { padding: 16px; }
+            .result-table th, .result-table td { padding: 7px 10px; }
+            .table-heading { padding: 10px 12px; }
             .transfer-table tr > :first-child { position: static; }
         }
-        .citation-section { --block-accent: var(--blue); margin-top: 48px; }
+        .citation-section { --block-accent: var(--blue); margin-top: 28px; }
         .citation-section h2 { color: var(--blue); }
-        .citation { margin: 20px 0 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; }
-        footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+        .citation { margin: 12px 0 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
+        footer { padding: 20px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
         footer .container { display: flex; gap: 16px 32px; justify-content: space-between; align-items: baseline; }
         footer p { margin: 0; }
         footer a { color: var(--muted); }
         @media (max-width: 760px) {
             .container { width: calc(100% - 40px); }
-            .hero { padding-block: 44px 40px; }
+            .hero { padding-block: 24px; }
             .project-title { letter-spacing: -.7px; }
-            .affiliations, .method-list, .experiment-grid { grid-template-columns: 1fr; }
-            .research-block { padding: 24px; }
-            .method-list { gap: 24px; }
-            .experiment-grid { gap: 20px; }
+            .affiliations, .method-list, .experiment-grid, .transport-grid { grid-template-columns: 1fr; }
+            .research-block { padding: 18px; }
+            .method-list { gap: 18px; }
+            .experiment-grid, .transport-grid { gap: 16px; }
             footer .container { flex-direction: column; gap: 12px; }
         }
         @media (max-width: 440px) {
             .site-nav { align-items: flex-start; padding-block: 12px; gap: 8px; flex-direction: column; }
             .nav-links { gap: 20px; }
             .nav-links a { display: inline-flex; align-items: center; min-height: 44px; }
-            .research-block { padding: 20px; }
-            h2 { font-size: 22px; }
+            .research-block { padding: 16px; }
+            h2 { font-size: 20px; }
             .method-list > li { padding-left: 30px; }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -204,8 +212,8 @@
 
 
             <div class="figure overview-figure">
-                <img src="figures/MoLF_overview.png" alt="Overview of Framework" width="2062" height="970" loading="eager" decoding="async">
-                <p class="caption">MoLF (Mixture-of-Latent-Flow) Overview</p>
+                <a href="figures/MoLF_overview.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Overview of Framework"><img src="figures/MoLF_overview.png" alt="Overview of Framework" width="2062" height="970" loading="eager" decoding="async"></a>
+                <p class="caption">MoLF (Mixture-of-Latent-Flow) Overview <a class="figure-original" href="figures/MoLF_overview.png" target="_blank" rel="noopener">View full size ↗</a></p>
             </div>
             
     <section class="research-block method-section" id="method" aria-labelledby="method-heading">
@@ -432,8 +440,8 @@
 
             <div>
                 <div class="figure">
-                    <img src="figures/eight_gaussians_combined.png" alt="Synthetic Gaussian Experiment" width="915" height="1144" loading="lazy" decoding="async">
-                    <p class="caption">MoLF (Sharper Modes) vs. Dense Baseline (Artifacts)</p>
+                <a href="figures/eight_gaussians_combined.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Synthetic Gaussian Experiment"><img src="figures/eight_gaussians_combined.png" alt="Synthetic Gaussian Experiment" width="915" height="1144" loading="lazy" decoding="async"></a>
+                <p class="caption">MoLF (Sharper Modes) vs. Dense Baseline (Artifacts) <a class="figure-original" href="figures/eight_gaussians_combined.png" target="_blank" rel="noopener">View full size ↗</a></p>
                 </div>
             </div>
 
@@ -444,22 +452,28 @@
 
     <article class="result-block">
             <h3>Geometric Analysis of Generative Transport</h3>
-            
+
+        <div class="transport-grid">
+            <div>
             <p>
                 We first visualize the <strong>global manifold alignment</strong>. The initial Gaussian noise (red, left) is transported in a <strong>single ODE step</strong> to a structured manifold (red, right) that well aligns with the ground truth gene distribution (blue). This confirms the model successfully approximates the target distribution.
             </p>
             <div class="figure wide-figure">
-                <img src="figures/macro.png" alt="Macro-scale Manifold Alignment" width="4800" height="2400" loading="lazy" decoding="async">
-                <p class="caption">Macro-scale Manifold Alignment</p>
+                <a href="figures/macro.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Macro-scale Manifold Alignment"><img src="figures/macro.png" alt="Macro-scale Manifold Alignment" width="4800" height="2400" loading="lazy" decoding="async"></a>
+                <p class="caption">Macro-scale Manifold Alignment <a class="figure-original" href="figures/macro.png" target="_blank" rel="noopener">View full size ↗</a></p>
+            </div>
             </div>
 
+            <div>
             <p>
                 At a finer granularity, tracing individual patch trajectories demonstrates <strong>micro-scale precision</strong>. The model learns specific paths transporting random noise to the correct target gene expression, effectively solving the conditional optimal transport problem.
             </p>
-            <div class="figure wide-figure">
-                <img src="figures/micro.png" alt="Micro-scale Patch Trajectories" width="4200" height="5400" loading="lazy" decoding="async">
-                <p class="caption">Micro-scale Trajectory Analysis</p>
+            <div class="figure trajectory-figure">
+                <a href="figures/micro.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Micro-scale Patch Trajectories"><img src="figures/micro.png" alt="Micro-scale Patch Trajectories" width="4200" height="5400" loading="lazy" decoding="async"></a>
+                <p class="caption">Micro-scale Trajectory Analysis <a class="figure-original" href="figures/micro.png" target="_blank" rel="noopener">View full size ↗</a></p>
             </div>
+            </div>
+        </div>
 
     </article>
 
@@ -474,8 +488,8 @@
                 Crucially, this strategy ensures that <strong>collaborative experts adapt to new cancer types better than rigid cancer specialists</strong>, as they can flexibly recombine learned biological primitives to characterize unseen tissues.
             </p>
             <div class="figure wide-figure">
-                <img src="figures/experts.png" alt="Expert Specialization UMAP" width="5580" height="2580" loading="lazy" decoding="async">
-                <p class="caption">Distributed Expert Strategy</p>
+                <a href="figures/experts.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Expert Specialization UMAP"><img src="figures/experts.png" alt="Expert Specialization UMAP" width="5580" height="2580" loading="lazy" decoding="async"></a>
+                <p class="caption">Distributed Expert Strategy <a class="figure-original" href="figures/experts.png" target="_blank" rel="noopener">View full size ↗</a></p>
             </div>
 
 
